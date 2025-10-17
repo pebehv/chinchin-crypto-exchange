@@ -1,4 +1,19 @@
 
-<div>
-    <app-navbar></app-navbar>
+<div class="container-main">
+    <div class="sidenav">
+        <app-navbar></app-navbar>
+    </div>
+        
+
+    <div class="content-body">
+
+        <div style="margin: 3%;">
+            <h3>Mercado de Criptomonedas</h3>
+        </div>
+        <div *ngIf="loading" style="margin: 30%;">Cargando datos...</div>
+        <div *ngIf="!loading">
+            <app-market-table [cryptos]="cryptos" ></app-market-table>
+            
+        </div>
+    </div>
 </div>

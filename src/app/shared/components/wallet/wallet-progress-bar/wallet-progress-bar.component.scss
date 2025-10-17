@@ -1,0 +1,5 @@
+/* En el archivo styles.css o styles.scss */
+.barra .mat-progress-bar-fill::after {
+  /* Este es el selector clave de Angular Material que controla el color */
+  background-color: #4CAF50 !important; /* El color verde que desees */
+}

@@ -1,0 +1,19 @@
+<div class="market-modal-container">
+
+  <h1 mat-dialog-title class="title-modal">Detalles del Mercado  
+      <span mat-span  (click)="closeDialog()">X</span>
+  </h1>
+  
+  <div mat-dialog-content class="content-modal">
+    <p><strong>Precio Actual:</strong> {{ cryptoData?.currentPrice }}</p>
+    <p><strong>Máximo en 24h:</strong> {{ cryptoData?.highPrice }}</p>
+    <p><strong>Mínimo en 24h:</strong> {{ cryptoData?.lowPrice }}</p>
+    <p><strong>Volumen en 24h:</strong> {{ cryptoData?.volume }}</p>
+  </div>
+  <div class="chart-container" style="height: 300px; width: 100%;">
+    <h3>Historial de Precios (30 días)</h3>
+    <div style="display: block;">
+      <canvas  id="MyChart" >{{ chart }}</canvas>
+    </div>
+  </div>
+</div>

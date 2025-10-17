@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
@@ -21,12 +21,18 @@ export class RecoverPassComponent {
 
   valForm!: FormGroup;
 
-  constructor(private router: Router) { }
+  constructor(private fb: FormBuilder, private router: Router) {this.loadForm();  }
+
+  loadForm(): void {
+    this.valForm = this.fb.group({
+      email : [null, [Validators.required]],
+    });  
+  }
 
   save(): void {
     if (this.valForm.valid) {
       console.log(this.valForm.value);
     }
-    this.router.navigate(['']);
+    this.router.navigate(['/login']);
   }
 }

@@ -1,0 +1,20 @@
+@import '../../../../../styles/variables';
+
+.market-modal-container {
+    width: 600px;
+    height: 400px;
+    padding: 20px;
+}
+.title-modal {
+    position: fixed;
+    background-color: white;
+    display: flex;
+    color: $color-primary;
+    span{
+        margin-left: 70px;
+        cursor: pointer;
+    }
+}
+.content-modal {
+    margin-top: 10%;
+}

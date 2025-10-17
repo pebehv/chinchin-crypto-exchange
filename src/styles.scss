@@ -2,6 +2,8 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
+@import 'styles/variables';
+
 
 html {
   @include mat.theme((
@@ -18,3 +20,78 @@ html {
 html, body { height: 100%; }
 body { background-color: #f3f3f5; margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
 font-size: 12px;}
+
+app-navbar{
+  position: fixed;
+}
+
+.container-main{
+    
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+.content-body{
+    width: 85%;
+    margin-left: 20%;
+}
+.sidenav-container{
+    width: 15%;
+}
+
+
+.table-container{
+    //width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10PX;
+    font-size: 11px;
+    height: auto;
+    margin: 3%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+  
+th {
+    background-color: $color-primary; /* Color de fondo verde */
+    color: white; /* Texto en blanco */
+    padding: 12px 15px;
+    //text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  /* Estilos para las celdas del cuerpo */
+  td {
+    padding: 15px 15px;
+    border-bottom: 1px solid #ddd;
+    color: #333; /* Color de texto oscuro */
+  }
+  
+  /* Estilos para las filas alternas */
+  tr:nth-child(even) {
+    background-color: $color-primary-transp; /* Fondo gris claro para filas pares */
+  }
+  
+  
+  
+  /* Efecto hover para las filas */
+  tr:hover {
+    background-color: #98c8f0; /* Fondo gris claro al pasar el mouse */
+  }
+  
+  /* Estilos para la última columna (Acciones) */
+  td:last-child {
+    text-align: center;
+  }
+  
+  /* Estilos para la última fila (sin borde inferior) */
+  tr:last-child td {
+    border-bottom: none;
+  }

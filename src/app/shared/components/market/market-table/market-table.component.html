@@ -1,1 +1,37 @@
-<p>market-table works!</p>
+<div class="table-container" >
+        
+    <table >
+    <thead>
+        <tr>
+        <th>Símbolo</th>
+        <th>Último precio</th>
+        <th>Cambio (%)</th>
+        <th>Volumen</th>
+        <th>Detalles</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of cryptosPaginadas">
+        <td>{{ c.symbol }}</td>
+        <td>{{ c.lastPrice }}</td>
+        <td [ngClass]="{'text-green': c.priceChangePercent > 0, 'text-red': c.priceChangePercent < 0}">
+            {{ c.priceChangePercent }}%
+        </td>
+        <td>{{ c.volume }}</td>
+        <td><button  class="button-login"
+             (click)="abrirModal()">Ver</button></td>
+        </tr>
+    </tbody>
+    </table>
+      
+
+    <mat-paginator [length]="totalItems"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              [pageIndex]="pageIndex" 
+              (page)="onPageChange($event)"
+              aria-label="Select page">
+    </mat-paginator>
+
+
+</div>
