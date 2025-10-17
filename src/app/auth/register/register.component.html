@@ -1,0 +1,47 @@
+<div class="container">
+    <mat-card class="card" appearance="outlined">
+    <mat-card-header class="card-header">
+        <div>
+            <button class="button-main">$</button>
+        </div>
+        <div>
+            
+            <p>Bienvenido de nuevo</p>
+            <p class="login-subtitle">Ingresa a tu cuenta para continuar</p>
+        </div>
+    </mat-card-header>
+    <mat-card-content>
+        <form class="form"  [formGroup]="valForm" (ngSubmit)="save()">
+            <div class="content-input">
+        
+                <mat-label>Correo Electronico / Usuario</mat-label>
+                <input type="text" matInput name="email" formControlName="email" 
+                    placeholder="Ex. pat@example.com">
+                
+            </div>
+            <div class="content-input">
+        
+                <mat-label>Contraseña</mat-label>
+                <input type="password" matInput name="pass" formControlName="pass" 
+                    placeholder="********">
+                
+            </div>
+            <div class="content-input">
+        
+                <mat-label>Repetir Contraseña</mat-label>
+                <input type="password" matInput name="repi_pass" formControlName="repi_pass" 
+                    placeholder="********">
+                
+            </div>
+            <button mat-raised-button  class="button-login" type="submit" (click)="save()" [disabled]="!valForm.valid">
+                Registrarse
+            </button>
+        </form>
+
+        
+    </mat-card-content>
+    <mat-card-footer class="example-card-footer">
+        
+    </mat-card-footer>
+    </mat-card>
+</div>
